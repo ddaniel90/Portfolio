@@ -466,4 +466,20 @@ p {
 	.sci {
 		margin-bottom: -20px;
 	}
+	.toggle {
+		width: 30px;
+		height: 30px;
+		right: 5px;
+		top: 10px;
+	}
+	.logoText {
+		position: absolute;
+		top: 10px;
+	}
+	.btn,
+	.btn2 {
+		padding: 5px 15px;
+		letter-spacing: 1px;
+		margin: 2px;
+	}
 }
