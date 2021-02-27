@@ -8,24 +8,24 @@
 }
 .toggle {
 	position: fixed;
-	top: 30px;
-	right: 30px;
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
+	top: 15px;
+	right: 15px;
+	width: 40px;
+	height: 40px;
 	background: #000 url(/Portofoliu/Img/menu.png);
-	background-size: 30px;
+	background-size: 25px;
 	background-position: center;
 	background-repeat: no-repeat;
 	cursor: pointer;
 	z-index: 1000;
+	border-radius: 50%;
 }
 .toggle.active {
-	background: #000 url(/Portofoliu/Img/close.png);
+	background: #63d1f4 url(/Portofoliu/Img/close.png);
 	background-size: 25px;
-	border-radius: 50%;
 	background-position: center;
 	background-repeat: no-repeat;
+	border-radius: 50%;
 }
 
 /***************************** About Me ***********************************/
@@ -37,6 +37,18 @@ section {
 	padding: 100px;
 	min-height: 100vh;
 }
+
+section::before2 {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 200px;
+	background: #000;
+	clip-path: polygon(0% 107%, 100% 100%, 0 50%);
+}
+
 .banner {
 	position: relative;
 	width: 100%;
@@ -105,16 +117,39 @@ p {
 .btn2 {
 	background: #63d1f4;
 	color: #fff;
+	margin: 10px;
 	padding: 10px 30px;
 	display: inline-block;
 	text-decoration: none;
 	font-weight: 500;
 	letter-spacing: 2px;
+	position: relative;
+	transition: 0.5s;
+	overflow: hidden;
 }
 .btn:hover,
 .btn2:hover {
-	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-		0 17px 50px 0 rgba(0, 0, 0, 0.19);
+	background: #110b14;
+}
+
+.btn:nth-child(2):hover,
+.btn2:nth-child(2):hover {
+	background: #292426;
+}
+.btn::before,
+.btn2::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, #fff, transparent);
+	transition: 0.5s;
+}
+.btn:hover::before,
+.btn2:hover::before {
+	left: 100%;
 }
 
 .sidebar {
@@ -166,11 +201,11 @@ p {
 }
 .sci li img {
 	transform: scale(0.8);
-	opacity: 0.7;
+	opacity: 2;
 }
 .sci li img:hover {
 	transform: scale(1.2);
-	opacity: 1;
+	opacity: 0.8;
 }
 .title {
 	width: 100%;
@@ -178,14 +213,25 @@ p {
 }
 .title h2 {
 	position: relative;
-	color: #63d1f4;
-	font-size: 1.8em;
+	color: #42a7c5;
+	font-size: 2.5em;
 	font-weight: 700;
-	letter-spacing: 1px;
+	letter-spacing: 1.2px;
 }
+
+/***************************** About Mee ***********************************/
+/*------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------*/
+/*------------------------------- -----------------------------------------*/
 .title p {
 	max-width: 700px;
 	display: inline-block;
+}
+.title.title.white span {
+	color: #42a7c5;
+	font-size: 1.4em;
+	font-weight: 700;
 }
 .title h2::before {
 	content: '';
@@ -193,8 +239,8 @@ p {
 	position: absolute;
 	transform: translateX(-50%);
 	bottom: -10px;
-	width: 60px;
-	height: 4px;
+	width: 500px;
+	height: 1px;
 	background: #000;
 }
 .title.white h2,
@@ -222,12 +268,11 @@ p {
 .about .content .imgBx {
 	margin-left: 40px;
 }
-
-.about .content .imgBx img {
-	max-width: 100%;
-}
 .imgBx {
 	opacity: 0.9;
+}
+.about .content .imgBx img {
+	max-width: 100%;
 }
 
 /***************************** Services ***********************************/
@@ -284,6 +329,11 @@ p {
 /*------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------*/
+
+.work {
+	background: #fff;
+}
+
 .work .content {
 	display: flex;
 	justify-content: center;
@@ -368,7 +418,7 @@ p {
 	padding: 10px;
 	border: none;
 	outline: none;
-	background: #111;
+	background: #1b1b1b;
 	color: #fff;
 	font-size: 16px;
 	resize: none;
@@ -377,7 +427,7 @@ p {
 	height: 150px;
 }
 .contact .contactForm .row input[type='submit'] {
-	background: #63d1f4;
+	background: #42a7c5;
 	color: #fff;
 	padding: 10px 30px;
 	display: inline-block;
@@ -394,7 +444,7 @@ p {
 /*------------------------------------------------------------------------*/
 .copyright {
 	color: #fff;
-	background: #111;
+	background: #1b1b1b;
 	text-align: center;
 	padding: 10px;
 }
@@ -485,6 +535,6 @@ p {
 	.btn2 {
 		padding: 5px 15px;
 		letter-spacing: 1px;
-		margin: 1.2px;
+		margin: 2px;
 	}
 }
