@@ -191,7 +191,7 @@ p {
 }
 .sci {
 	position: absolute;
-	left: 110px;
+	left: 10px;
 	bottom: 20px;
 	display: flex;
 	justify-content: center;
@@ -566,5 +566,22 @@ p {
 		padding: 5px 15px;
 		letter-spacing: 1px;
 		margin: 2px;
+	}
+	@media (max-width: 529px) {
+		.title h2::before {
+			bottom: 2px;
+			width: 100px;
+		}
+		.sci li img {
+			transform: scale(0.6);
+		}
+		.sci {
+			left: 20px;
+			bottom: 10px;
+		}
+		.sci li {
+			margin-right: 20px;
+			
+		}
 	}
 }
