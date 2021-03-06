@@ -334,7 +334,7 @@ p {
 	border-radius: 50%;
 	box-shadow: inset 0 0 50px #000;
 	background: #222;
-	/*z-index: 1000; active this will not cover the hover*/
+	z-index: 1;
 }
 .percent .numberh {
 	position: absolute;
@@ -386,7 +386,7 @@ svg {
 	position: relative;
 	width: 150px;
 	height: 150px;
-	/*z-index: 1000; active this will not cover the hover*/
+	z-index: 1;
 }
 svg circle {
 	width: 100%;
