@@ -198,8 +198,9 @@ p {
 	align-items: center;
 }
 .sci li {
-	margin-right: 50px;
+	margin-right: 10px;
 	list-style: none;
+	margin-left: 80px;
 }
 .sci li img {
 	transform: scale(0.8);
