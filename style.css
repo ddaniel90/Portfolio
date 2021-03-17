@@ -8,24 +8,24 @@
 }
 .toggle {
 	position: fixed;
-	top: 30px;
-	right: 30px;
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	background: #000 url(/Portofoliu/Img/menu.png);
-	background-size: 30px;
+	top: 15px;
+	right: 15px;
+	width: 40px;
+	height: 40px;
+	background: #000 url(Img/menu.png);
+	background-size: 25px;
 	background-position: center;
 	background-repeat: no-repeat;
 	cursor: pointer;
 	z-index: 1000;
+	border-radius: 50%;
 }
 .toggle.active {
-	background: #000 url(/Portofoliu/Img/close.png);
+	background: #63d1f4 url(Img/close.png);
 	background-size: 25px;
-	border-radius: 50%;
 	background-position: center;
 	background-repeat: no-repeat;
+	border-radius: 50%;
 }
 
 /***************************** About Me ***********************************/
@@ -37,6 +37,18 @@ section {
 	padding: 100px;
 	min-height: 100vh;
 }
+
+section::before2 {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 200px;
+	background: #000;
+	clip-path: polygon(0% 107%, 100% 100%, 0 50%);
+}
+
 .banner {
 	position: relative;
 	width: 100%;
@@ -115,6 +127,7 @@ p {
 	transition: 0.5s;
 	overflow: hidden;
 }
+
 .btn:hover,
 .btn2:hover {
 	background: #110b14;
@@ -177,23 +190,24 @@ p {
 }
 .sci {
 	position: absolute;
-	left: 100px;
+	left: 10px;
 	bottom: 20px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 .sci li {
-	margin-right: 30px;
+	margin-right: 10px;
 	list-style: none;
+	margin-left: 80px;
 }
 .sci li img {
 	transform: scale(0.8);
-	opacity: 0.7;
+	opacity: 2;
 }
 .sci li img:hover {
 	transform: scale(1.2);
-	opacity: 1;
+	opacity: 2;
 }
 .title {
 	width: 100%;
@@ -201,23 +215,34 @@ p {
 }
 .title h2 {
 	position: relative;
-	color: #63d1f4;
-	font-size: 1.8em;
+	color: #42a7c5;
+	font-size: 2.5em;
 	font-weight: 700;
-	letter-spacing: 1px;
+	letter-spacing: 1.2px;
 }
+
+/***************************** About Mee ***********************************/
+/*------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------*/
+/*------------------------------- -----------------------------------------*/
 .title p {
 	max-width: 700px;
 	display: inline-block;
+}
+.title.title.white span {
+	color: #42a7c5;
+	font-size: 1.4em;
+	font-weight: 700;
 }
 .title h2::before {
 	content: '';
 	left: 50%;
 	position: absolute;
 	transform: translateX(-50%);
-	bottom: -10px;
-	width: 60px;
-	height: 4px;
+	bottom: -8px;
+	width: 400px;
+	height: 0.5px;
 	background: #000;
 }
 .title.white h2,
@@ -245,12 +270,148 @@ p {
 .about .content .imgBx {
 	margin-left: 40px;
 }
-
+.imgBx {
+	opacity: 0.9;
+}
 .about .content .imgBx img {
 	max-width: 100%;
 }
-.imgBx {
-	opacity: 0.9;
+
+/***************************** Skill's***********************************/
+/*------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------*/
+
+.skill {
+	background: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: 50px;
+}
+
+.container2 {
+	position: relative;
+	width: 900px;
+	display: flex;
+	justify-content: space-around;
+}
+.container2 .card {
+	position: relative;
+	width: 250px;
+	margin: 79px 0 0 0;
+	background: linear-gradient(0deg, #1b1b1b, #222, #1b1b1b);
+	display: flex;
+	align-items: center;
+	height: 300px;
+	border-radius: 30px;
+	text-align: center;
+	overflow: hidden;
+	transition: 0.5s;
+}
+.container2 .card:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+.container2 .card:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -50%;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.03);
+	pointer-events: none;
+	z-index: 1;
+}
+.percent {
+	position: relative;
+	width: 150px;
+	height: 150px;
+	left: 50px;
+	border-radius: 50%;
+	box-shadow: inset 0 0 50px #000;
+	background: #222;
+	z-index: 1;
+}
+.percent .numberh {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+}
+
+.percent .numberh h3 {
+	color: #777;
+	font-weight: 700s;
+	font-style: 40px;
+	transition: 0.5s;
+}
+.card:hover .percent .numberh h3 {
+	color: #fff;
+	font-size: 60px;
+}
+.percent .numberh h3 span {
+	font-size: 24px;
+	color: #777;
+	transition: 0.5s;
+}
+.card:hover .percent .numberh h3 span {
+	color: #fff;
+}
+.text {
+	position: relative;
+	color: #777;
+	left: 50px;
+	margin-top: 20px;
+	font-weight: 700;
+	font-size: 18px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: 0.5s;
+}
+.card:hover .text {
+	color: #fff;
+	font-size: 20px;
+}
+
+svg {
+	position: relative;
+	width: 150px;
+	height: 150px;
+	z-index: 1;
+}
+svg circle {
+	width: 100%;
+	height: 100%;
+	fill: none;
+	stroke: #191919;
+	stroke-width: 10;
+	stroke-linecap: round;
+	transform: translate(75px, 5px);
+}
+svg circle:nth-child(2) {
+	stroke-dasharray: 440;
+	stroke-dashoffset: 440;
+}
+.card:nth-child(1) svg circle:nth-child(2) {
+	stroke-dashoffset: calc(440 - (440 * 87) / 100);
+	stroke: #ff5349;
+}
+.card:nth-child(2) svg circle:nth-child(2) {
+	stroke-dashoffset: calc(440 - (440 * 75) / 100);
+	stroke: #00a1ff;
+}
+.card:nth-child(3) svg circle:nth-child(2) {
+	stroke-dashoffset: calc(440 - (440 * 25) / 100);
+	stroke: #eef600;
 }
 
 /***************************** Services ***********************************/
@@ -270,13 +431,14 @@ p {
 	margin: 20px;
 	transition: 0.5s;
 	text-align: center;
-	background: #f5f5f5;
+	background: #efeff1;
+	border-radius: 45.8% 9%;
 }
 .services .content .servicesBx:hover {
 	background: #000;
 }
 .services .content .servicesBx img {
-	max-width: 80px;
+	max-width: 100px;
 	transition: 1.1s;
 }
 .services .content .servicesBx:hover img {
@@ -307,6 +469,11 @@ p {
 /*------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------*/
+
+.work {
+	background: #fff;
+}
+
 .work .content {
 	display: flex;
 	justify-content: center;
@@ -315,10 +482,10 @@ p {
 }
 .work .content .workBx {
 	position: relative;
-	width: 265px;
+	width: 365px;
 	height: 265px;
-	margin: 10px;
-	transition: 0.5s;
+	margin: 20px;
+	transition: 0.8s;
 	text-align: center;
 }
 .work .content .workBx .imgBx,
@@ -343,7 +510,7 @@ p {
 .work .content .workBx .textBX {
 	background: #000;
 	opacity: 0.8;
-	transition: 0.5s;
+	transition: 0.8s;
 }
 .work .content .workBx:hover .textBX {
 	opacity: 0;
@@ -391,7 +558,7 @@ p {
 	padding: 10px;
 	border: none;
 	outline: none;
-	background: #111;
+	background: #1b1b1b;
 	color: #fff;
 	font-size: 16px;
 	resize: none;
@@ -400,7 +567,7 @@ p {
 	height: 150px;
 }
 .contact .contactForm .row input[type='submit'] {
-	background: #63d1f4;
+	background: #42a7c5;
 	color: #fff;
 	padding: 10px 30px;
 	display: inline-block;
@@ -417,7 +584,7 @@ p {
 /*------------------------------------------------------------------------*/
 .copyright {
 	color: #fff;
-	background: #111;
+	background: #1b1b1b;
 	text-align: center;
 	padding: 10px;
 }
@@ -431,6 +598,33 @@ p {
 /*------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------*/
+@media (max-width: 1108px) {
+	.logoText {
+		top: 3px;
+	}
+	.banner .contentBx h2 {
+		font-size: 2em;
+	}
+	p {
+		font-size: 1em;
+		margin: 4px 0;
+	}
+	.btn,
+	.btn2 {
+		margin: 2px;
+		padding: 5px 14px;
+	}
+}
+@media (max-width: 991px) {
+	.btn,
+	.btn2 {
+		letter-spacing: 1px;
+		font-weight: 200;
+	}
+	.banner .contentBx h4 {
+		font-size: 1.4em;
+	}
+}
 @media (max-width: 980px) {
 	.banner .imgSidebar {
 		display: none;
@@ -508,6 +702,22 @@ p {
 	.btn2 {
 		padding: 5px 15px;
 		letter-spacing: 1px;
-		margin: 1.2px;
+		margin: 2px;
+	}
+	@media (max-width: 529px) {
+		.title h2::before {
+			bottom: 2px;
+			width: 100px;
+		}
+		.sci li img {
+			transform: scale(0.6);
+		}
+		.sci {
+			left: 20px;
+			bottom: 10px;
+		}
+		.sci li {
+			margin-right: 20px;
+		}
 	}
 }
