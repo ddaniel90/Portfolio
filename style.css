@@ -137,7 +137,6 @@ p {
 .btn2:nth-child(2):hover {
 	background: #292426;
 }
-
 .btn::before,
 .btn2::before {
 	content: '';
