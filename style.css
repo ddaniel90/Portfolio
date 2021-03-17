@@ -162,7 +162,7 @@ p {
 	transition: 0.5s;
 	padding: 40px;
 	z-index: 100;
-	right: -100%; 
+	right: -100%;
 }
 .sidebar.active {
 	right: 0;
