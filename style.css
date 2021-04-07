@@ -83,7 +83,7 @@ section::before2 {
 }
 .logoText {
 	position: absolute;
-	top: 40px;
+	top: 2px;
 	left: 100px;
 	font-size: 1.2em;
 	text-transform: uppercase;
@@ -191,16 +191,16 @@ p {
 }
 .sci {
 	position: absolute;
-	left: 10px;
-	bottom: 20px;
+	left: 51px;
+	bottom: 0px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 .sci li {
-	margin-right: 10px;
+	margin-right: 0px;
 	list-style: none;
-	margin-left: 80px;
+	margin-left: 50px;
 }
 .sci li img {
 	transform: scale(0.8);
@@ -230,6 +230,7 @@ p {
 .title p {
 	max-width: 700px;
 	display: inline-block;
+	margin-bottom: 60px;
 }
 .title.title.white span {
 	color: #42a7c5;
@@ -470,57 +471,91 @@ svg circle:nth-child(2) {
 /*------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------*/
-
-.work {
-	background: #fff;
+.new-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 80px;
+	width: 100%;
+	max-width: 1000%;
+	padding: 0px;
+	margin-top: 20px;
 }
-
-.work .content {
-	display: flex;
-	justify-content: center;
-	flex-direction: row;
-	flex-wrap: wrap;
+@media (max-width: 760px) {
+	.new-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
-.work .content .workBx {
+.game-card {
 	position: relative;
-	width: 365px;
-	height: 265px;
-	margin: 20px;
-	transition: 0.8s;
-	text-align: center;
+	z-index: 1;
+	width: 100%;
+	padding-bottom: 150%;
+	perspective: 1000px;
+	box-shadow: 5px 5px 20px rgb(197, 195, 195);
 }
-.work .content .workBx .imgBx,
-.work .content .workBx .textBX {
+.game-card__cover {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
 	position: absolute;
+	z-index: 1;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	overflow: hidden;
+	background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+	background-size: cover;
+	perspective-origin: 50% 50%;
+	transform-style: preserve-3d;
+	transform-origin: top center;
+	will-change: transform;
+	transform: skewX(0.001deg);
+	transition: transform 0.35s ease-in-out;
 }
-.work .content .workBx .imgBx img {
+.game-card__cover:after {
+	display: block;
+	content: '';
 	position: absolute;
-	top: 0;
+	z-index: 100;
+	top: 100;
 	left: 0;
 	width: 100%;
-	height: 100%;
-	object-fit: cover;
+	height: 120%;
+	background: linear-gradient(
+		226deg,
+		rgba(255, 255, 255, 0.4) 0%,
+		rgba(255, 255, 255, 0.4) 35%,
+		rgba(255, 255, 255, 0.2) 42%,
+		rgba(255, 255, 255, 0) 60%
+	);
+	transform: translatey(-20%);
+	will-change: transform;
+	transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
 }
-.work .content .workBx .textBX {
-	background: #000;
-	opacity: 0.8;
-	transition: 0.8s;
+.game-card:hover .game-card__cover {
+	transform: rotateX(7deg) translatey(-6px);
 }
-.work .content .workBx:hover .textBX {
-	opacity: 0;
+.game-card:hover .game-card__cover:after {
+	transform: translatey(0%);
 }
-.work .content .workBx .textBX h3 {
-	color: #fff;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-size: 1em;
+.game-card:before {
+	display: block;
+	content: '';
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	width: 90%;
+	height: 90%;
+	background: rgba(0, 0, 0, 0.5);
+	box-shadow: 0 6px 12px 12px rgba(0, 0, 0, 0.4);
+	will-change: skewx(0.001deg);
+	transition: transform 0.35s ease-in-out, opacity 0.5s ease-in-out;
+}
+.game-card:hover:before {
+	opacity: 0.6;
+	transform: rotatex(7deg) translatey(-6px) scale(1.05);
 }
 
 /***************************** Contact ******************************/
@@ -600,6 +635,16 @@ svg circle:nth-child(2) {
 /*------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------*/
 @media (max-width: 1108px) {
+	.project-container {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.container2 {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+	}
 	.logoText {
 		top: 3px;
 	}
@@ -616,6 +661,7 @@ svg circle:nth-child(2) {
 		padding: 5px 14px;
 	}
 }
+
 @media (max-width: 991px) {
 	.btn,
 	.btn2 {
@@ -626,6 +672,7 @@ svg circle:nth-child(2) {
 		font-size: 1.4em;
 	}
 }
+
 @media (max-width: 980px) {
 	.banner .imgSidebar {
 		display: none;
@@ -642,7 +689,7 @@ svg circle:nth-child(2) {
 		right: 40px;
 	}
 	.sci {
-		left: 40px;
+		left: -19px;
 	}
 	section {
 		padding: 40px;
@@ -676,9 +723,10 @@ svg circle:nth-child(2) {
 		margin: 10px;
 	}
 	.sidebar ul li a {
-		font-size: 1.5em;
+		font-size: 1.2em;
 	}
 }
+
 @media (max-width: 799px) {
 	.services .content .servicesBx,
 	.work .content .workBx {
@@ -686,9 +734,7 @@ svg circle:nth-child(2) {
 		width: 100%;
 		margin: 10px 0;
 	}
-	.sci {
-		margin-bottom: -20px;
-	}
+
 	.toggle {
 		width: 30px;
 		height: 30px;
@@ -705,20 +751,29 @@ svg circle:nth-child(2) {
 		letter-spacing: 1px;
 		margin: 2px;
 	}
-	@media (max-width: 529px) {
-		.title h2::before {
-			bottom: 2px;
-			width: 100px;
-		}
-		.sci li img {
-			transform: scale(0.6);
-		}
-		.sci {
-			left: 20px;
-			bottom: 10px;
-		}
-		.sci li {
-			margin-right: 20px;
-		}
+}
+
+@media (max-width: 529px) {
+	.title h2::before {
+		bottom: 2px;
+		width: 100px;
+	}
+	.sci li img {
+		transform: scale(0.6);
+	}
+}
+
+@media (max-width: 375px) {
+	p {
+		font-size: 1.2em;
+		margin: 4px 0;
+	}
+	.logoText {
+		font-size: 1em;
+	}
+
+	.sci li img {
+		transform: scale(0.5);
+		margin: 0;
 	}
 }
